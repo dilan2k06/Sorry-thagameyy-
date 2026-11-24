@@ -1,1 +1,61 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>En Thagameyy-ku Oru Chinna Message 💗</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;display:grid;place-items:center;font-family:Georgia,'Times New Roman',serif;color:#7b3151;background:radial-gradient(circle at top,#fff8fb,#fbd9e6 60%,#f6c5d8)}
+.card{width:min(90vw,430px);padding:32px 24px;text-align:center;border:1px solid #ffffffb8;border-radius:28px;background:#fffafce8;box-shadow:0 18px 55px #a8496b2b;position:relative;z-index:2}
+.envelope{font-size:64px;margin-bottom:10px;animation:bob 2s ease-in-out infinite}
+h1{font-size:clamp(29px,8vw,39px);margin:8px 0 12px;color:#c04475}
+p{font-size:19px;line-height:1.6;margin:12px 0}
+.small{font-size:15px;color:#98647a}
+button{border:0;border-radius:30px;padding:14px 23px;margin-top:14px;background:#d94f86;color:white;font-size:17px;cursor:pointer;box-shadow:0 7px 18px #d94f8640}
+#message{display:none;animation:appear .9s ease both}
+.heartline{color:#e45b91;font-size:27px;letter-spacing:7px;margin-top:12px}
+.heart{position:fixed;bottom:-35px;z-index:1;pointer-events:none;color:#e45b91;animation:rise linear forwards}
+@keyframes bob{50%{transform:translateY(-8px) rotate(3deg)}}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="envelope" aria-hidden="true">💌</div>
+  <div id="intro">
+    <p class="small">Unakkaga oru chinna surprise...</p>
+    <h1>En Thagameyy-ku 💗</h1>
+    <p>En manasula irukkuradha sollanum...</p>
+    <button onclick="openMessage()">Open pannunga Thagameyy 🥺</button>
+  </div>
+  <div id="message">
+    <h1>Sorry Thagameyy 🥺</h1>
+    <p>Enna mannichidu Mah... Unna kovapaduthina ennoda thappukku manasara sorry.</p>
+    <p>Un feelings-um, un manasum enakku romba mukkiyam. Unna purinjukkaama pona, ini konjam nalla purinjukka try panren.</p>
+    <p><strong>Unna romba love panren ❤️</strong></p>
+    <p><strong>Unna romba miss panren 🥺🫂</strong></p>
+    <p>Seekiram sirichidu Thagameyy... Aana udane forgive pannanumnu pressure illa. Unakku time venumna eduthuko. 💗</p>
+    <p class="small">Eppovum un mela paasamoda,<br>Dilan ❤️</p>
+    <div class="heartline">♡ ♥ ♡</div>
+  </div>
+</main>
+<script>
+function openMessage(){
+  document.getElementById('intro').style.display='none';
+  document.getElementById('message').style.display='block';
+  for(let i=0;i<24;i++){
+    setTimeout(()=>{
+      const h=document.createElement('span');
+      h.className='heart';h.textContent=['♥','♡','💗'][Math.floor(Math.random()*3)];
+      h.style.left=Math.random()*100+'vw';
+      h.style.fontSize=(16+Math.random()*22)+'px';
+      h.style.animationDuration=(4+Math.random()*4)+'s';
+      document.body.appendChild(h);setTimeout(()=>h.remove(),8500);
+    },i*110);
+  }
+}
+</script>
+</body>
+</html>
